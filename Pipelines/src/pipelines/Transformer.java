@@ -10,5 +10,11 @@ package pipelines;
  * @author suejanehan
  */
 public abstract class Transformer<Data> extends Filter{
+    Pipe inPipe;
+    Pipe outPipe;
+    public Transformer(Pipe inPipe, Pipe outPipe){
+        inPipe=inPipe;
+        outPipe=outPipe;
+    }
     public abstract Message<Data> transform(Message<Data> msg);
 }

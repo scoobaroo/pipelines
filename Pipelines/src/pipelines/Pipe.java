@@ -13,15 +13,15 @@ import java.util.Queue;
  */
 public class Pipe<Data> extends Publisher{
     
-    Queue<Message<Data>> q;
+    Queue<Message<Data>> queue;
     
     public Message<Data> read(){
-        Message<Data> msg = q.poll();
+        Message<Data> msg = queue.poll();
         return msg;
     }
     
     public void write(Message<Data> msg){
-        q.add(msg);
+        queue.add(msg);
         return;
     }
     

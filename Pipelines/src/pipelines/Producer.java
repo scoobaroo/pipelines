@@ -9,8 +9,11 @@ package pipelines;
  *
  * @author suejanehan
  */
-public abstract class Producer extends Filter{
-    public Producer(Pipe p1, Pipe p2){
-        
-    }
+public abstract class Producer<Data> extends Filter{
+    Pipe outPipe;
+    public Producer(Pipe outPipe){
+        outPipe=outPipe;
+    };
+    public abstract Message<Data> produce();
+    public abstract void generate();
 }

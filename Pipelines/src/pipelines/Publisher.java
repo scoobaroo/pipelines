@@ -10,5 +10,5 @@ package pipelines;
  * @author suejanehan
  */
 public class Publisher {
-   
+
 }
