@@ -10,8 +10,7 @@ import java.util.*;
  *
  * @author suejanehan
  */
-public class Filter<Data> implements Subscriber{
-    public void update(){
-        
-    }
+public abstract class Filter<Data> implements Subscriber{
+    public abstract void update();
+    public abstract void activate();
 }

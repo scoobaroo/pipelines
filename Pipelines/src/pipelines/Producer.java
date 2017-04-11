@@ -9,11 +9,12 @@ package pipelines;
  *
  * @author suejanehan
  */
-public abstract class Producer<Data> extends Filter{
-    Pipe outPipe;
+public abstract class Producer<Data> extends Filter<Data>{
+    public Pipe outPipe;
     public Producer(Pipe outPipe){
-        outPipe=outPipe;
+        this.outPipe=outPipe;
     };
-    public abstract Message<Data> produce();
-    public abstract void generate();
+    public abstract void produce(Pipe outPipe);
+    public abstract Message<Data> generate();
+    public abstract void start();
 }

@@ -12,17 +12,16 @@ import java.util.Queue;
  * @author suejanehan
  */
 public class Pipe<Data> extends Publisher{
-    
-    Queue<Message<Data>> queue;
-    
+    Message<Data> message;
+    Filter inFilter;
+    Filter outFilter;
+    public Pipe(){
+        
+    }
     public Message<Data> read(){
-        Message<Data> msg = queue.poll();
-        return msg;
+        return this.message;
     }
-    
     public void write(Message<Data> msg){
-        queue.add(msg);
-        return;
+        this.message = msg;
     }
-    
 }

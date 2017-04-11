@@ -10,9 +10,10 @@ package pipelines;
  * @author suejanehan
  */
 public abstract class Consumer<Data> extends Filter{
-    Pipe inPipe;
+    public Pipe inPipe;
     public Consumer(Pipe inPipe){
-        inPipe=inPipe;
+        this.inPipe=inPipe;
     }
     public abstract void consume(Message<Data> input);
+    public abstract void start();
 }

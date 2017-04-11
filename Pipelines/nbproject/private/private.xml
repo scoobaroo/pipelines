@@ -14,11 +14,13 @@
         <group>
             <file>file:/Users/suejanehan/Desktop/CS251B/Pipelines/Pipelines/src/pipelines/Consumer.java</file>
             <file>file:/Users/suejanehan/Desktop/CS251B/Pipelines/Pipelines/src/pipelines/Transformer.java</file>
+            <file>file:/Users/suejanehan/Desktop/CS251B/Pipelines/Pipelines/src/pipelines/Assembly.java</file>
             <file>file:/Users/suejanehan/Desktop/CS251B/Pipelines/Pipelines/src/pipelines/Message.java</file>
             <file>file:/Users/suejanehan/Desktop/CS251B/Pipelines/Pipelines/src/pipelines/Pipe.java</file>
             <file>file:/Users/suejanehan/Desktop/CS251B/Pipelines/Pipelines/src/pipelines/Subscriber.java</file>
             <file>file:/Users/suejanehan/Desktop/CS251B/Pipelines/Pipelines/src/pipelines/Pipelines.java</file>
             <file>file:/Users/suejanehan/Desktop/CS251B/Pipelines/Pipelines/src/pipelines/Tester.java</file>
+            <file>file:/Users/suejanehan/Desktop/CS251B/Pipelines/Pipelines/src/pipelines/AbstractFactory.java</file>
             <file>file:/Users/suejanehan/Desktop/CS251B/Pipelines/Pipelines/src/pipelines/Filter.java</file>
             <file>file:/Users/suejanehan/Desktop/CS251B/Pipelines/Pipelines/src/pipelines/Producer.java</file>
             <file>file:/Users/suejanehan/Desktop/CS251B/Pipelines/Pipelines/src/pipelines/Publisher.java</file>

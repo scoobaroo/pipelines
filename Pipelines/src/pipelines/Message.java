@@ -10,14 +10,14 @@ package pipelines;
  * @author suejanehan
  */
 public class Message<Data> {
-    private Data content;
-    private Boolean quit;
-    private Boolean fail;
+    public Data content;
+    public Boolean quit=false;
+    public Boolean fail=false;
     public Message(Data content){
-        content=content;
+        this.content=content;
     }
-    private Data getContent(){
-        return content;
+    public Data getContent(){
+        return this.content;
     }
     public void setContent(Data content){
         this.content=content;
