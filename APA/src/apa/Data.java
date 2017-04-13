@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pipelines;
+package apa;
 
 /**
  *
  * @author suejanehan
  */
-public abstract class Consumer<Data> extends Filter<Data>{
-    public Consumer(){
-    }
-    public abstract void consume(Data input);
-    public abstract void start();
+class Data {
+    
 }

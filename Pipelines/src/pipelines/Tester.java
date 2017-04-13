@@ -10,12 +10,17 @@ package pipelines;
  * @author suejanehan
  */
 public abstract class Tester<Data> extends Filter<Data> {
-    public Pipe inPipe;
-    public Pipe outPipe;
-    public Tester(Pipe inPipe, Pipe outPipe){
-        this.inPipe=inPipe;
-        this.outPipe=outPipe;
+    public Tester(){
     }
-    public abstract Boolean test(Message<Data> msg);
+    public abstract Boolean test(Data msg);
     public abstract void write(Message<Data> msg);
+    public void update(){
+        Message<Data> m = inPipe.read();
+        if(m.fail==true) outPipe.write(m);
+        if (test(m.content)) outPipe.write(m);
+        else{
+            m.fail=true;
+            outPipe.write(m);
+        }
+    }
 }

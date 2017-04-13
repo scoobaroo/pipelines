@@ -10,11 +10,22 @@ package pipelines;
  * @author suejanehan
  */
 public abstract class Producer<Data> extends Filter<Data>{
-    public Pipe outPipe;
-    public Producer(Pipe outPipe){
-        this.outPipe=outPipe;
+    public Producer(){
     };
-    public abstract void produce(Pipe outPipe);
-    public abstract Message<Data> generate();
-    public abstract void start();
+    public abstract Data produce();
+    public void update(){
+        Data data = produce();
+        Message message=new Message(data);
+        outPipe.write(message);
+    }
+    public void start(){
+        while(true){
+            Data data = produce();
+            Message message=new Message(data);
+            if (data==null) message.quit=true;
+            outPipe.write(message);
+            if(message.quit==true)
+                break;
+        }
+    };
 }

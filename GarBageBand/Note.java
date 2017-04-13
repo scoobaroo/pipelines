@@ -5,22 +5,17 @@
  */
 package GarBageBand;
 
-import org.jfugue.player.Player;
-
 /**
  *
  * @author suejanehan
  */
 public class Note {
-    public String frequency;
-    public float duration;
-    public float amplitude;
-    public Note(String freq, float amp, float dur){
+    public int frequency;
+    public int duration;
+    public int amplitude;
+    public Note(int freq, int amp, int dur){
         this.frequency=freq;
         this.amplitude=amp;
         this.duration=dur;
-    }
-    public void play (Note note){
-        Player player = new Player();
     }
 }

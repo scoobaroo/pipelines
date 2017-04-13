@@ -9,12 +9,14 @@ package pipelines;
  *
  * @author suejanehan
  */
-public abstract class Transformer<Data> extends Filter<Data>{
-    public Pipe inPipe;
-    public Pipe outPipe;
-    public Transformer(Pipe inPipe, Pipe outPipe){
-        this.inPipe=inPipe;
-        this.outPipe=outPipe;
+public abstract class Transformer<Data> extends Filter<Data> {
+    public Transformer(){ 
     }
-    public abstract Message<Data> transform(Message<Data> msg);
+    public abstract Data transform(Data msg);
+    public void update(){
+        Message<Data> m = inPipe.read();
+        Data content = m.getContent();
+        Data newContent = transform(content);
+        outPipe.write(new Message(newContent));
+    }
 }

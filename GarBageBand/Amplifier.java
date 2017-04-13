@@ -15,26 +15,26 @@ import pipelines.Transformer;
  *
  * @author suejanehan
  */
-public class Amplifier<Note> extends Transformer<Note>{
-
-    public Amplifier(Pipe inPipe, Pipe outPipe) {
-        super(inPipe, outPipe);
+public class Amplifier extends Transformer<Note>{
+    
+    float magnitude = 2;
+    public Amplifier() {
     }
     
-    public Message<Note> transform(Message<Note> msg){
-        Note note = (Note) msg.content;
-        note.amplitude=10*note.amplitude;
-        return new Message(note);
+    public Note transform(Note note){
+        System.out.println("Inside transform function of amplifier");
+        note.amplitude = (int)  magnitude*note.amplitude;
+        return note;
     }
     
     public void activate(){
-        Message val = inPipe.read();
-        val = transform(val); // do something to val
-        outPipe.write(val);
+        Message<Note> message = inPipe.read();
+        Note note = message.getContent();
+        Note newNote = transform(note); // do something to val
+        Message newMessage = new Message(newNote);
+        outPipe.write(newMessage);
     }
     
-    @Override
-
     public void update() {
     }
 }

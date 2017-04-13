@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class Publisher {
     List<Subscriber> subscribers;
-    public void notify1(){
+    public void notifySubscribers(){
         for (Subscriber s : subscribers){
             s.update();
         }

@@ -4,13 +4,28 @@
  * and open the template in the editor.
  */
 package pipelines;
-import java.util.*;
 
 /**
  *
  * @author suejanehan
  */
 public abstract class Filter<Data> implements Subscriber{
-    public abstract void update();
-    public abstract void activate();
+    protected Pipe<Data> inPipe,outPipe;
+    protected static boolean DATA_DRIVEN=true;
+    public Filter(){
+        
+    }
+    public Filter(Pipe<Data> inPipe,Pipe<Data> outPipe){
+        this.inPipe=inPipe;
+        this.outPipe=outPipe;
+    }
+    public void setInputPipe(Pipe<Data> inputPipe){
+        this.inPipe = inputPipe;
+        if(Pipelines.DATA_DRIVEN){
+            inPipe.subscribe(this);
+        }
+    }
+    public void setOutputPipe(Pipe<Data> outputPipe){
+        this.outPipe = outputPipe;
+    }
 }
