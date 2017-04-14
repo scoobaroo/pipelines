@@ -13,7 +13,6 @@ public abstract class Tester<Data> extends Filter<Data> {
     public Tester(){
     }
     public abstract Boolean test(Data msg);
-    public abstract void write(Message<Data> msg);
     public void update(){
         Message<Data> m = inPipe.read();
         if(m.fail==true) outPipe.write(m);

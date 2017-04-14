@@ -11,15 +11,20 @@ package pipelines;
  */
 public class Pipeline{
 
+    public static boolean DATA_DRIVEN;
+
     /**
      * @param args the command line arguments
      */
-    boolean DATA_DRIVEN = true;
-    public Pipeline(boolean dataDriven){
-        this.DATA_DRIVEN = dataDriven;
+
+    public Pipeline(boolean bool){
+        this.DATA_DRIVEN = bool;
     }
-    public void connect(Filter filter1,Filter filter2){
+    
+    public static void connect(Filter filter1,Filter filter2){
         Pipe pipe= new Pipe();
+        if (DATA_DRIVEN) pipe.subscribe(filter2);
+        else pipe.subscribe(filter1);
         filter1.setOutputPipe(pipe);
         filter2.setInputPipe(pipe);
     }

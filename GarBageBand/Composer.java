@@ -38,12 +38,10 @@ public class Composer extends Producer<Note>{
         Note note = new Note(frequency,amplitude,duration);
         return note;
     }
-
-    @Override
+    
     public void update() {
     }
 
-    @Override
     public void start() {
         System.out.println("Composer started producing notes");
         produce();

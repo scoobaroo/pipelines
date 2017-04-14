@@ -11,7 +11,7 @@ package pipelines;
  */
 public abstract class Filter<Data> implements Subscriber{
     protected Pipe<Data> inPipe,outPipe;
-    protected static boolean DATA_DRIVEN=true;
+
     public Filter(){
         
     }
@@ -21,11 +21,15 @@ public abstract class Filter<Data> implements Subscriber{
     }
     public void setInputPipe(Pipe<Data> inputPipe){
         this.inPipe = inputPipe;
-        if(Pipelines.DATA_DRIVEN){
+        if(Pipeline.DATA_DRIVEN){
             inPipe.subscribe(this);
         }
     }
     public void setOutputPipe(Pipe<Data> outputPipe){
         this.outPipe = outputPipe;
     }
+
+    public void start() {
+    }
+
 }

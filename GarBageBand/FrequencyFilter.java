@@ -25,9 +25,6 @@ public class FrequencyFilter extends Tester<Note>{
         else
             return true;
     }
-    
-    public void write(Message<Note> msg) {
-        outPipe.write(msg);
-    }
+
     
 }

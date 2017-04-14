@@ -27,5 +27,5 @@ public abstract class Producer<Data> extends Filter<Data>{
             if(message.quit==true)
                 break;
         }
-    };
+    }
 }

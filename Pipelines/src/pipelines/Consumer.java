@@ -13,5 +13,7 @@ public abstract class Consumer<Data> extends Filter<Data>{
     public Consumer(){
     }
     public abstract void consume(Data input);
-    public abstract void start();
+    public void start(Data input){
+        consume(input);
+    };
 }

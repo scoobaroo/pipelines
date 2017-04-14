@@ -21,20 +21,20 @@ public class Amplifier extends Transformer<Note>{
     public Amplifier() {
     }
     
+    @Override
     public Note transform(Note note){
         System.out.println("Inside transform function of amplifier");
         note.amplitude = (int)  magnitude*note.amplitude;
         return note;
     }
     
-    public void activate(){
+    @Override
+    public void update(){
         Message<Note> message = inPipe.read();
         Note note = message.getContent();
         Note newNote = transform(note); // do something to val
         Message newMessage = new Message(newNote);
         outPipe.write(newMessage);
     }
-    
-    public void update() {
-    }
+
 }

@@ -28,9 +28,4 @@ public class AmplitudeFilter extends Tester<Note>{
             return true;
     }
 
-    @Override
-    public void write(Message<Note> msg) {
-        outPipe.write(msg);
-    }
-    
 }

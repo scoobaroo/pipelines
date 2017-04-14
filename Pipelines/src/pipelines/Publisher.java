@@ -21,7 +21,7 @@ public class Publisher {
     public void subscribe(Subscriber s){
         subscribers.add(s);
     }
-    public void unsuscribe(Subscriber s){
+    public void unsubscribe(Subscriber s){
         subscribers.remove(s);
     }
 }

@@ -13,7 +13,7 @@ import pipelines.Tester;
  *
  * @author suejanehan
  */
-public class DurationFilter extends Tester<Note> {
+public class DurationFilter extends Tester<Note>{
     public int maxDuration = 1500;
     public int minDuration = 10;
 
