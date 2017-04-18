@@ -23,8 +23,8 @@ public class GarbageBand extends Pipeline{
         super(bool);
     }
     public static void main(String[] args) {
-        GarbageBand gb = new GarbageBand(true);
-        System.out.println("Inside main function of GarbageBand");
+          System.out.println("Inside main function of GarbageBand");
+//        GarbageBand gb = new GarbageBand(true);
 //        Filter<Note> composer = new Composer();
 //        Filter<Note> amplifier = new Amplifier();
 //        Filter<Note> frequencyFilter = new FrequencyFilter();

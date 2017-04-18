@@ -21,21 +21,16 @@ public class Composer extends Producer<Note>{
     
     public Note produce() {
         for(int i=0;i<50;i++){
-            Note note = generate();
-            Message msg = new Message(note);
-            outPipe.write(msg);
+            System.out.println("Inside produce function of Composer");
+            Random rand = new Random();
+            System.out.println(rand.nextInt(127));
+            int frequency = rand.nextInt(127);
+            int amplitude = rand.nextInt(1000);
+            int duration = rand.nextInt(1000);
+            Note note = new Note(frequency,amplitude,duration);
             return note;
         }
         return null;
-    }
-    
-    public Note generate() {
-        Random rand = new Random();
-        int frequency = rand.nextInt(127);
-        int amplitude = rand.nextInt(1000);
-        int duration = rand.nextInt(1000);
-        Note note = new Note(frequency,amplitude,duration);
-        return note;
     }
     
     public void update() {

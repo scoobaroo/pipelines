@@ -51,8 +51,4 @@ public class Player extends Consumer<Note>{
         super.start();
     }
     
-    public void activate(){
-        Message<Note> msg = inPipe.read();
-        consume(msg.getContent()); // do something to val
-    }
 }
