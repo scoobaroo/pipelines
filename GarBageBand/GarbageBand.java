@@ -25,18 +25,18 @@ public class GarbageBand extends Pipeline{
     public static void main(String[] args) {
         GarbageBand gb = new GarbageBand(true);
         System.out.println("Inside main function of GarbageBand");
-        Filter<Note> composer = new Composer();
-        Filter<Note> amplifier = new Amplifier();
-        Filter<Note> frequencyFilter = new FrequencyFilter();
-        Filter<Note> durationFilter = new DurationFilter();
-        Filter<Note> amplitudeFilter = new AmplitudeFilter();
-        Filter<Note> player = new Player();
-        gb.connect(composer,amplifier);
-        gb.connect(amplifier,frequencyFilter);
-        gb.connect(frequencyFilter,durationFilter);
-        gb.connect(durationFilter,amplitudeFilter);
-        gb.connect(amplitudeFilter,player);
-        composer.start();
+//        Filter<Note> composer = new Composer();
+//        Filter<Note> amplifier = new Amplifier();
+//        Filter<Note> frequencyFilter = new FrequencyFilter();
+//        Filter<Note> durationFilter = new DurationFilter();
+//        Filter<Note> amplitudeFilter = new AmplitudeFilter();
+//        Filter<Note> player = new Player();
+//        gb.connect(composer,amplifier);
+//        gb.connect(amplifier,frequencyFilter);
+//        gb.connect(frequencyFilter,durationFilter);
+//        gb.connect(durationFilter,amplitudeFilter);
+//        gb.connect(amplitudeFilter,player);
+//        composer.start();
         GarbageBand gb2 = new GarbageBand(false);
         Filter<Note> composer2 = new Composer();
         Filter<Note> amplifier2 = new Amplifier();
@@ -49,5 +49,6 @@ public class GarbageBand extends Pipeline{
         gb2.connect(frequencyFilter2,durationFilter2);
         gb2.connect(durationFilter2,amplitudeFilter2);
         gb2.connect(amplitudeFilter2,player2);
+        player2.start();
     }
 }
