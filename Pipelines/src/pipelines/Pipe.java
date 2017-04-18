@@ -5,8 +5,6 @@
  */
 package pipelines;
 
-import java.util.Queue;
-
 /**
  *
  * @author suejanehan
@@ -14,8 +12,8 @@ import java.util.Queue;
 public class Pipe<Data> extends Publisher{
 
     Message<Data> message;
-    Filter inFilter;
-    Filter outFilter;
+//    Filter inFilter;
+//    Filter outFilter;
     public Pipe(){
         
     }

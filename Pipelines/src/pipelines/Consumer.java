@@ -13,7 +13,9 @@ public abstract class Consumer<Data> extends Filter<Data>{
     public Consumer(){
     }
     public abstract void consume(Data input);
-    public void start(Data input){
+    public void start(){
+        Message<Data> message = inPipe.read();
+        Data input = message.content;
         consume(input);
     };
 }

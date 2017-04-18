@@ -5,32 +5,27 @@
  */
 package pipelines;
 
-/**
- *
- * @author suejanehan
- */
 public class Pipeline{
-
     public static boolean DATA_DRIVEN;
-
     /**
-     * @param args the command line arguments
+     * @param bool
      */
-
     public Pipeline(boolean bool){
-        this.DATA_DRIVEN = bool;
+        Pipeline.DATA_DRIVEN = bool;
     }
-    
     public static void connect(Filter filter1,Filter filter2){
         Pipe pipe= new Pipe();
-        if (DATA_DRIVEN) pipe.subscribe(filter2);
+        System.out.println(filter2.toString());
+        System.out.println(filter1.toString());
+        System.out.println(pipe.toString());
+        if (Pipeline.DATA_DRIVEN){ 
+            pipe.subscribe(filter2);
+        }
         else pipe.subscribe(filter1);
         filter1.setOutputPipe(pipe);
         filter2.setInputPipe(pipe);
     }
-    
     public static void main(String[] args) {
         System.out.println("Inside Pipelines Application");// TODO code application logic here
     }
-    
 }

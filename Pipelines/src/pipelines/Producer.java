@@ -13,11 +13,7 @@ public abstract class Producer<Data> extends Filter<Data>{
     public Producer(){
     };
     public abstract Data produce();
-    public void update(){
-        Data data = produce();
-        Message message=new Message(data);
-        outPipe.write(message);
-    }
+        
     public void start(){
         while(true){
             Data data = produce();

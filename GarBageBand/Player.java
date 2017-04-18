@@ -22,7 +22,6 @@ import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Synthesizer;
 import pipelines.Consumer;
 import pipelines.Message;
-import pipelines.Pipe;
 
 /**
  *
@@ -48,11 +47,6 @@ public class Player extends Consumer<Note>{
         }
     }
 
-    @Override
-    public void update() {
-    }
-    
-    @Override
     public void start() {
         super.start();
     }

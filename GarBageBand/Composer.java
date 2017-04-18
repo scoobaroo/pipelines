@@ -6,7 +6,6 @@
 package GarBageBand;
 
 import pipelines.Message;
-import pipelines.Pipe;
 import pipelines.Producer;
 import java.util.Random;
 
@@ -44,7 +43,7 @@ public class Composer extends Producer<Note>{
 
     public void start() {
         System.out.println("Composer started producing notes");
-        produce();
+        super.start();
     }
     
 }

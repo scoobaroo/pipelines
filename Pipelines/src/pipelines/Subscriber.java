@@ -5,10 +5,18 @@
  */
 package pipelines;
 
+import java.util.List;
+
 /**
  *
  * @author suejanehan
  */
-public interface Subscriber {
-    public void update();
+public abstract class Subscriber {
+
+    public void update(){
+        
+    }
+    public void start(){
+        
+    }
 }

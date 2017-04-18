@@ -5,8 +5,6 @@
  */
 package GarBageBand;
 
-import pipelines.Message;
-import pipelines.Pipe;
 import pipelines.Tester;
 
 /**
@@ -27,5 +25,7 @@ public class DurationFilter extends Tester<Note>{
         else
             return true;
     }
-
+    public void update(){
+        super.update();
+    }
 }

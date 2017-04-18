@@ -9,7 +9,7 @@ package pipelines;
  *
  * @author suejanehan
  */
-public abstract class Filter<Data> implements Subscriber{
+public abstract class Filter<Data> extends Subscriber{
     protected Pipe<Data> inPipe,outPipe;
 
     public Filter(){
@@ -25,11 +25,11 @@ public abstract class Filter<Data> implements Subscriber{
             inPipe.subscribe(this);
         }
     }
+    
     public void setOutputPipe(Pipe<Data> outputPipe){
         this.outPipe = outputPipe;
-    }
-
-    public void start() {
+        if(!Pipeline.DATA_DRIVEN)
+            outPipe.subscribe(this);
     }
 
 }
