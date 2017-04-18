@@ -20,7 +20,7 @@ public class Composer extends Producer<Note>{
     }
     
     public Note produce() {
-        for(int i=0;i<50;i++){
+        while(true){
             System.out.println("Inside produce function of Composer");
             Random rand = new Random();
             System.out.println(rand.nextInt(127));
@@ -30,7 +30,6 @@ public class Composer extends Producer<Note>{
             Note note = new Note(frequency,amplitude,duration);
             return note;
         }
-        return null;
     }
     
     public void update() {
